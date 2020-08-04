@@ -1,0 +1,3 @@
+	<view>
+		<page-head :title="title">新建的页面</page-head>
+	</view>

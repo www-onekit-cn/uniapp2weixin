@@ -1,0 +1,7 @@
+<view
+class="onekit-ad {{Class}}"
+style="{{Style}}"
+id="{{id}}"
+unit-id="{{unitId}}"
+ad-intervals="{{adIntervals}}"
+></view>
