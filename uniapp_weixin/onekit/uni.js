@@ -658,4 +658,10 @@ export default class uni {
     return console.log("暂时没有做！")
   }
   ///////////////////////////////////媒体/////////////////////////////////////////
+  static chooseImage(uni_object){
+    if(!uni_object){
+      return
+    }
+    wx.chooseImage(wx_object)
+  }
 }
