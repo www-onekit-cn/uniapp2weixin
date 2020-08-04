@@ -1,7 +1,10 @@
 {
   "pages": [
+    "pages/canvas/canvas",
+    "pages/navigator/navigator",
     "pages/index/index",
-    "pages/navigator/navigator"
+    "pages/navigator/redirect/redirect",
+    "pages/navigator/navigate/navigate"
   ],
   "window": {
     "backgroundTextStyle": "light",

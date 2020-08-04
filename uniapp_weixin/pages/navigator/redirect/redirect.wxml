@@ -1,0 +1,3 @@
+	<view>
+		<page-head :title="title">当前页</page-head>
+	</view>
