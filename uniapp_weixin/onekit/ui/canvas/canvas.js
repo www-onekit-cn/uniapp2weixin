@@ -7,9 +7,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    id:{type:String,value:""},
-    Class:{type:String,value:""},
-    Style:{type:String,value:""},
+    onekitId:{type:String,value:""},
+    onekitClass:{type:String,value:""},
+    onekitStyle:{type:String,value:""},
     type:{type:String,value:""},
     canvasId:{type:String,value:""},
     disableScroll:{type:Boolean,value:false},
