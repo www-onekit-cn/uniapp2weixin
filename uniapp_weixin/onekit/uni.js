@@ -817,7 +817,146 @@ static showToast(uni_object) {
 }
 //////////////////////////////////////////////界面///--->/////hideToast/////////////////////////////////////////////////////
 static hideToast(){
-  return wx.hideToast=uni.hideToast
+  return wx.hideToast()
+}
+//////////////////////////////////////////////界面///--->/////showLoading/////////////////////////////////////////////////////
+static showLoading(uni_object){
+  if(!uni_object){
+    return
+  }
+  var uni_title=uni_object.title;
+  var uni_mask=uni_object.mask;
+  var uni_success = uni_object.success;
+  var uni_fail = uni_object.fail;
+  var uni_complete = uni_object.complete;
+  uni_object=null;
+  /////////////////////////////////
+  var wx_object={};
+  if(uni_title){
+    wx_object.title=uni_title
+  }
+  if(uni_mask){
+    wx_object.mask=uni_mask
+  }
+  wx_object.success = function (wx_res) {
+    if (uni_success) {
+      uni_success(wx_res);
+    }
+    if (uni_complete) {
+      uni_complete(wx_res);
+    }
+  };
+  wx_object.fail = function (wx_res) {
+    if (uni_fail) {
+      uni_fail(wx_res);
+    }
+    if (uni_complete) {
+      uni_complete(wx_res);
+    }
+  };
+  wx.showLoading(wx_object)
+}
+//////////////////////////////////////////////界面///--->/////hideLoading/////////////////////////////////////////////////////
+static hideLoading(){
+  return wx.hideLoading()
+}
+//////////////////////////////////////////////界面///--->/////showModal/////////////////////////////////////////////////////
+static showModal(uni_object){
+  if(!uni_object){
+    return
+  }
+  var uni_title=uni_object.title;
+  var uni_content=uni_object.content;
+  var uni_showCancel=uni_object.showCancel;
+  var uni_cancelText=uni_object.cancelText;
+  var uni_cancelColor=uni_object.cancelColor;
+  var uni_confirmText=uni_object.confirmText;
+  var uni_confirmColor=uni_object.confirmColor;
+  var uni_success = uni_object.success;
+  var uni_fail = uni_object.fail;
+  var uni_complete = uni_object.complete;
+  uni_object=null;
+  /////////////////////////////////
+  var wx_object={};
+  if(uni_title){
+    wx_object.title=uni_title
+  }
+  if(uni_content){
+    wx_object.content=uni_content
+  }
+  if(uni_showCancel){
+    wx_object.showCancel=uni_showCancel
+  }
+  if(uni_cancelText){
+    wx_object.cancelText=uni_cancelText
+  }
+  if(uni_cancelColor){
+    wx_object.cancelColor=uni_cancelColor
+  }
+  if(uni_confirmText){
+    wx_object.confirmText=uni_confirmText
+  }
+  if(uni_confirmColor){
+    wx_object.confirmColor=uni_confirmColor
+  }
+  wx_object.success = function (wx_res) {
+    if (uni_success) {
+      uni_success(wx_res);
+    }
+    if (uni_complete) {
+      uni_complete(wx_res);
+    }
+  };
+  wx_object.fail = function (wx_res) {
+    if (uni_fail) {
+      uni_fail(wx_res);
+    }
+    if (uni_complete) {
+      uni_complete(wx_res);
+    }
+  };
+  wx.showModal(wx_object)
+}
+//////////////////////////////////////////////界面///--->/////showActionSheet///////////////////////////////////////////////////
+static showActionSheet(uni_object){
+  if(!uni_object){
+    return
+  }
+  var uni_itemList=uni_object.itemList;
+  var uni_itemColor=uni_object.itemColor;
+  var uni_popover=uni_object.popover;
+  var uni_success = uni_object.success;
+  var uni_fail = uni_object.fail;
+  var uni_complete = uni_object.complete;
+  uni_object=null;
+  /////////////////////////////////
+  var wx_object={};
+  if(uni_itemList){
+    wx_object.itemList=uni_itemList
+  }
+  if(uni_itemColor){
+    wx_object.itemColor=uni_itemColor
+  }
+  if(uni_popover){
+    wx_object.popover=uni_popover
+  }
+  wx_object.success = function (wx_res) {
+    if (uni_success) {
+      uni_success(wx_res);
+    }
+    if (uni_complete) {
+      uni_complete(wx_res);
+    }
+  };
+  wx_object.fail = function (wx_res) {
+    if (uni_fail) {
+      uni_fail(wx_res);
+    }
+    if (uni_complete) {
+      uni_complete(wx_res);
+    }
+  };
+  wx.showActionSheet(wx_object)
 }
 
 }
