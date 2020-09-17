@@ -177,15 +177,102 @@ export default class uni {
     };
     wx.downloadFile(wx_object)
   }
-  // connectSocket///////
+  //////////////////////////////////////////////////// connectSocket///////////////////////////////
   static connectSocket(uni_object) {
     if (!uni_object) {
       return
     }
-    /////////////////////
+    var uni_url = uni_object.url
+    var uni_header = uni_object.header
+    var uni_protocols=uni_object.protocols
+    var uni_success = uni_object.success;
+    var uni_fail = uni_object.fail;
+    var uni_complete = uni_object.complete;
+    uni_object = null;
+    /////////////////
     var wx_object = {}
+    if (uni_url) {
+      wx_object.url = uni_url
+    }
+    if(uni_header){
+      wx_object.header=uni_header
+    }
+    if(uni_protocols){
+      wx_object.protocols=uni_protocols
+    }
+    if(uni_success){
+      wx_object.success=uni_success
+    }
+    if(uni_fail){
+      wx_object.fail=uni_fail
+    }
+    if(uni_complete){
+      wx_object.complete=uni_complete
+    }
+    wx_object.success = function (wx_res) {
+      if (uni_success) {
+        uni_success(wx_res);
+      }
+      if (uni_complete) {
+        uni_complete(wx_res);
+      }
+    };
+    wx_object.fail = function (wx_res) {
+      if (uni_fail) {
+        uni_fail(wx_res);
+      }
+      if (uni_complete) {
+        uni_complete(wx_res);
+      }
+    };
     wx.connectSocket(wx_object)
   }
+  ///////////////////////////////closeSocket/////////////////////////////////////////////
+static closeSocke(uni_object){
+ if(!uni_object){
+   return
+ }
+ var uni_code=uni_object.code||1000
+ var uni_reason=uni_object.uni_reason
+ var uni_success=uni_object.success
+ var uni_fail=uni_object.fail
+ var uni_complete=uni_object.complete
+ uni_object=null
+ /////////////////////////
+ var wx_object={}
+ if (uni_code) {
+  wx_object.code = uni_code
+}
+if (uni_reason) {
+  wx_object.reason = uni_reason
+}
+if (uni_success) {
+  wx_object.success = uni_success
+}
+if (uni_fail) {
+  wx_object.fail = uni_fail
+}
+if (uni_complete) {
+  wx_object.complete = uni_complete
+}
+wx_object.success = function (wx_res) {
+  if (uni_success) {
+    uni_success(wx_res);
+  }
+  if (uni_complete) {
+    uni_complete(wx_res);
+  }
+};
+wx_object.fail = function (wx_res) {
+  if (uni_fail) {
+    uni_fail(wx_res);
+  }
+  if (uni_complete) {
+    uni_complete(wx_res);
+  }
+};
+wx.colseSocket(wx_object)
+}
   //////////////////////////////////页面路由/////////////////////////////////////////////////
   static navigateTo(uni_object) {
     if (!uni_object) {
@@ -492,7 +579,7 @@ export default class uni {
     wx.removeStorage(wx_object)
   }
   static removeStorageSync(key) {
-    wx.removeStorageSync(key)
+   return wx.removeStorageSync(key)
   }
   static clearStorage(uni_object) {
     if (!uni_object) {
@@ -636,6 +723,15 @@ export default class uni {
     if (uni_address) {
       wx_object.address = uni_address
     }
+    if (uni_success) {
+      wx_object.success = uni_success
+    }
+    if (uni_fail) {
+      wx_object.fail = uni_fail
+    }
+    if(uni_complete){
+      wx_object.complete=uni_complete
+    }
     wx_object.success = function (wx_res) {
       if (uni_success) {
         uni_success(wx_res);
@@ -664,4 +760,64 @@ export default class uni {
     }
     wx.chooseImage(wx_object)
   }
+//////////////////////////////////////////////界面///--->/////showToast/////////////////////////////////////////////////////
+static showToast(uni_object) {
+  if (!uni_object) {
+    return
+  }
+
+  var uni_title=uni_object.title;
+  var uni_icon=uni_object.icon;
+  var uni_image=uni_object.image;
+  var uni_mask=uni_object.mask;
+  var uni_duration=uni_object.duration;
+  var uni_position=uni_object.position;
+  var uni_success = uni_object.success;
+  var uni_fail = uni_object.fail;
+  var uni_complete = uni_object.complete;
+  uni_object = null;
+    ////////////////////
+  var wx_object = {};
+  if (uni_title) {
+    wx_object.title = uni_title
+  }
+  if (uni_icon) {
+    wx_object.icon = uni_icon
+  }
+  if (uni_image) {
+    wx_object.image = uni_image
+  }
+  if (uni_mask) {
+    wx_object.mask = uni_mask
+  }
+  if (uni_duration) {
+    wx_object.duration = uni_duration
+  }
+  if (uni_position) {
+    wx_object.position = uni_position
+  }
+  
+  wx_object.success = function (wx_res) {
+    if (uni_success) {
+      uni_success(wx_res);
+    }
+    if (uni_complete) {
+      uni_complete(wx_res);
+    }
+  };
+  wx_object.fail = function (wx_res) {
+    if (uni_fail) {
+      uni_fail(wx_res);
+    }
+    if (uni_complete) {
+      uni_complete(wx_res);
+    }
+  };
+  wx.showToast(wx_object)
+}
+//////////////////////////////////////////////界面///--->/////hideToast/////////////////////////////////////////////////////
+static hideToast(){
+  return wx.hideToast=uni.hideToast
+}
+
 }
