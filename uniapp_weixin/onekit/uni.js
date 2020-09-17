@@ -653,6 +653,7 @@ wx.colseSocket(wx_object)
     };
     wx.getLocation(wx_object)
   }
+////////////////////////////////////////////////选择位置////////////////////////////////////////////////
   static chooseLocation(uni_object) {
     if (!uni_object) {
       return
@@ -693,6 +694,7 @@ wx.colseSocket(wx_object)
     };
     wx.chooseLocation(wx_object)
   }
+  ///////////////////////////////////////////查看位置////////////////////////////////////////////////
   static openLocation(uni_object) {
     if (!uni_object) {
       return
@@ -750,6 +752,7 @@ wx.colseSocket(wx_object)
     };
     wx.openLocation(wx_object)
   }
+  /////////////////////////////////////创建并返回 map/////////////////////////////////////////////////////////
   static createMapContext(){
     return console.log("暂时没有做！")
   }
@@ -958,5 +961,7 @@ static showActionSheet(uni_object){
   };
   wx.showActionSheet(wx_object)
 }
+//////////////////////////////////////////////界面///--->/////showActionSheet///////////////////////////////////////////////////
+
 
 }
