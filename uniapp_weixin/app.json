@@ -1,10 +1,6 @@
 {
   "pages": [
-    "pages/canvas/canvas",
-    "pages/navigator/navigator",
-    "pages/index/index",
-    "pages/navigator/redirect/redirect",
-    "pages/navigator/navigate/navigate"
+    "yang/yang"
   ],
   "window": {
     "backgroundTextStyle": "light",
