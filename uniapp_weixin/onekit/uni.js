@@ -1113,7 +1113,22 @@ static createVideoContext(videoId,ui) {
     return wx.createIntersectionObserver(object)
   }
   ///////////////////////////
+ static getSubNVueById(subNvueId){
+  
+}
+static getCurrentSubNVue(){
 
+}
+static requireNativePlugin(PluginName){
+
+}
+
+static report( eventName , options){//统计未完成
+  
+}
+static getProvider(object){
+  console.alert("本平台不支持getProvider")
+}
   ///////////////////////////////////
   static createARCameraContext(object) {
     throw new Error("createARCameraContext�ݲ�֧��!!")
@@ -1130,15 +1145,4 @@ function ai_init(api) {
   }
 }
 
-function getSubNVueById(subNvueId){
-  
-}
-function getCurrentSubNVue(){
 
-}
-function requireNativePlugin(PluginName){
-  
-}
-static getProvider(object){
-  console.alert("本平台不支持getProvider")
-}
