@@ -503,6 +503,13 @@ export default class uni {
   static getShareInfo(object) {
     return wx.getShareInfo(object)
   }
+  static share(object){
+    console.alert("本平台不支持")
+  }
+  static shareWithSystem(object){
+        console.alert("本平台不支持")
+
+  }
   ////////数据缓存/////// Storage //////////////
   static setStorage(object) {
     return wx.setStorage(object)
@@ -929,6 +936,9 @@ static checkIsSoterEnrolledInDevice(object) {
   static hideHomeButton(object){
     return wx.hideHomeButton(object)
   }
+  static onTabBarMidButtonTap(CALLBACK){
+  console.alert("本平台暂不支持onTabBarMidButtonTap")
+}
 ///////////////////////////////////
 static setTabBarItem(object) {
   return wx.setTabBarItem(object)
@@ -1118,4 +1128,17 @@ function ai_init(api) {
  uni.ai[api] = (object) => {
     return uni_ai.run(api, object);
   }
+}
+
+function getSubNVueById(subNvueId){
+  
+}
+function getCurrentSubNVue(){
+
+}
+function requireNativePlugin(PluginName){
+  
+}
+static getProvider(object){
+  console.alert("本平台不支持getProvider")
 }
