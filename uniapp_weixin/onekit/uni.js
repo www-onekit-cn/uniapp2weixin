@@ -1122,7 +1122,9 @@ static getCurrentSubNVue(){
 static requireNativePlugin(PluginName){
 
 }
-
+static preloadPage(object){
+   console.alert("本平台不支持")
+ }
 static report( eventName , options){//统计未完成
   
 }
